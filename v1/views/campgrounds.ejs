@@ -1,5 +1,5 @@
 <%- include('partials/header') %>
-
+    <!-- Jumbotron in bootstrap 5 is different, css required -->
     <style>
         .jumbotron {
             padding: 2rem 1rem;
@@ -8,6 +8,8 @@
             border-radius: .3rem;
         }
     </style>
+
+
     <div class="container">
         <header class="jumbotron">
             <div class="container">
@@ -18,15 +20,21 @@
         </header>
 
 
+        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+            <% campgrounds.forEach(function(campgrounds){ %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="img-thumbnail">
+                        <img src="<%= campgrounds.image %>">
+                        <div class="caption">
+                            <h4>
+                                <%= campgrounds.Site %>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
 
-        <% campgrounds.forEach(function(campgrounds){ %>
-            <div>
-                <h4>
-                    <%= campgrounds.Site %>
-                </h4>
-                <img src="<%= campgrounds.image %>">
-            </div>
+        </div>
 
-            <% }); %>
     </div>
     <%- include ('partials/footer') %>
