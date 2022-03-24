@@ -35,6 +35,6 @@ app.get('/campgrounds/new', function (req, res) {
     res.render('new.ejs')
 })
 
-app.listen(1001, function () {
+app.listen(3000, function () {
     console.log('Server has started')
 })
