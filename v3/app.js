@@ -46,13 +46,12 @@ app.get('/campgrounds/new', function (req, res) {
 })
 // Show Route
 app.get('/campgrounds/:id', function (req, res) {
-    Campground.findById(req.params.id, function (err, foundCampgroud) {
+    Campground.findById(req.params.id).populate('comments').exec(function (err, foundCampgroud) {
         if (err) {
             console.log(err)
         } else {
             res.render('show', { campground: foundCampgroud });
         }
-
     })
 })
 

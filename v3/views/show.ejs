@@ -2,13 +2,22 @@
 
 
     <h1>
-        <%= campground.name%>
+        <%= campground.name %>
     </h1>
 
-    <img src="<%= campground.image %>" alt="">
+    <img src="<%= campground.image %>">
 
     <p>
         <%= campground.description %>
     </p>
 
-    <%- include ('partials/footer') %>
+    <% campground.comments.forEach(function(comment){ %>
+        <p>
+            <strong>
+                <%= comment.author %>
+            </strong> - <%= comment.text%>
+        </p>
+        <% }) %>
+
+
+            <%- include ('partials/footer') %>
