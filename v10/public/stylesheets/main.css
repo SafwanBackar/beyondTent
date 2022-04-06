@@ -1,0 +1,15 @@
+body {
+    background: plum;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+#delete-form {
+    display: inline;
+}
