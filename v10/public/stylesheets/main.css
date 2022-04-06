@@ -13,3 +13,7 @@ body {
 #delete-form {
     display: inline;
 }
+
+#commentDelete {
+    display: inline;
+}
