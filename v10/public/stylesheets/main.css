@@ -10,10 +10,6 @@ body {
     width: 100%;
 }
 
-#delete-form {
-    display: inline;
-}
-
-#commentDelete {
+.delete-form {
     display: inline;
 }
