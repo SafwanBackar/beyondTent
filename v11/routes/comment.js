@@ -51,14 +51,21 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
 
 // Comment Edit
 router.get('/:comment_id/edit', middleware.checkCommentOwnership, function (req, res) {
-    Comment.findById(req.params.comment_id, function (err, foundComment) {
-        if (err) {
-            res.redirect('back')
-        } else {
-            res.render('comments/edit', { campground_id: req.params.id, comment: foundComment })
+    Campground.findById(req.params.id, function (err, foundCampgroud) {
+        if (err || !foundCampgroud) {
+            req.flash('error', 'Campground not found')
+            res.redirect('/campgrounds')
         }
+        Comment.findById(req.params.comment_id, function (err, foundComment) {
+            if (err) {
+                res.redirect('back')
+            } else {
+                res.render('comments/edit', { campground_id: req.params.id, comment: foundComment })
+            }
+        })
     })
 })
+
 
 // Comment Update
 router.put('/:comment_id', middleware.checkCommentOwnership, function (req, res) {

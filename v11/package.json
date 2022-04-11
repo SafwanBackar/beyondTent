@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "supervisor -e 'js|ejs|css' app.js"
+    "dev": "supervisor -e 'js|ejs|css' app.js",
+    "start": "node app.js"
   },
   "author": "Safwan Backar",
   "license": "ISC",
